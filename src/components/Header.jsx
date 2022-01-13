@@ -43,11 +43,12 @@ const Header = (props) => {
                 <Wrapper>
                     <Title>Where is world?</Title>
                     <ModeSwitcher onClick={toggleTheme}>
-                        {theme === 'light' ? (
-                            <IoMoon size="14px" />
+                        <IoMoon size="14px" />
+                        {/* {theme === 'light' ? (
+                            
                         ) : (
                             <IoMoon size="14px" />
-                        )}
+                        )} */}
                         <span style={{ marginLeft: '0.75rem' }}>{theme}</span>
                     </ModeSwitcher>
                 </Wrapper>
