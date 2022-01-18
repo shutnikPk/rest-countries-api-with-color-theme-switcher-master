@@ -1,9 +1,7 @@
-import axios from "axios";
-import { useState, useEffect } from "react"
+import Layout from "./components/Layout"
+
 import { Routes, Route, Link } from 'react-router-dom'
 
-import Header from "./components/Header";
-import Main from "./components/Main";
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import Details from "./pages/Details";
@@ -13,15 +11,13 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/country/:name" element={<Details />} />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index path="" element={<HomePage />} />
+          <Route path="country/:name" element={<Details />} />
           <Route path="*" element={<NotFound />} />
-
-        </Routes>
-      </Main>
+        </Route>
+      </Routes>
     </>
   )
 }

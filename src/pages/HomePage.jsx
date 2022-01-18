@@ -6,6 +6,7 @@ import Card from "../components/Cards";
 
 import { useNavigate } from 'react-router-dom'
 
+
 import { ALL_COUNTRIES } from "../config";
 
 const HomePage = () => {
@@ -13,9 +14,6 @@ const HomePage = () => {
 
     const navigate = useNavigate()
 
-    const goCountry = navigate(`/country/:${country.name}`)
-
-    console.log(countries)
     useEffect(() => {
         axios.get(ALL_COUNTRIES).then(
             ({ data }) => setCountries(data)
@@ -46,7 +44,7 @@ const HomePage = () => {
                             ],
                         }
                         return (
-                            <Card key={country.name} onClick={() => goCountry}{...countryInfo} />
+                            <Card key={country.name} onClick={() => navigate(`/country/:${country.name}`, { replace: false, state: { nsme: country.name } })} {...countryInfo} />
                         )
                     })
                 }

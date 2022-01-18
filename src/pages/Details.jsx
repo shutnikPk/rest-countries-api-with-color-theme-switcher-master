@@ -1,7 +1,10 @@
-const Details = ({ match }) => {
+import { useParams } from "react-router-dom";
+
+const Details = () => {
+    const { name } = useParams()
     return (
         <div>
-            {match.params.name}
+            Country: {name}
         </div>
     );
 }
